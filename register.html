@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - Nyusur</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Daftar Akun Nyusur</h2>
+    <form id="register-form">
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Register</button>
+    </form>
+    <p>Sudah punya akun? <a href="login.html">Login disini</a></p>
+    <div id="errorMsg"></div>
+  </div>
+
+  <!-- Firebase Modular -->
+  <script type="module" src="register.js"></script>
+</body>
+</html>

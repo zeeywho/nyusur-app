@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f8ff;
+  }
+
+  header {
+  background-color: rgb(255, 255, 255);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 55px;
+  margin-right: 10px;
+}
+
+.logo img:hover{
+  transform: translateY(-2px);
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+  .auth-buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .auth-buttons a {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .auth-buttons .login-btn {
+    border: 2px solid #1976d2;
+    color: #1976d2;
+    background: transparent;
+  }
+  
+  .auth-buttons .register-btn {
+    background: #1976d2;
+    color: white;
+  }
+
+  .btn-back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #0062cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .btn-back:hover {
+    background-color: #004a99;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  #searchBox {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+  }
+  
+  .laporan-card {
+    background-color: #fff;
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .laporan-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  
+  .laporan-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .laporan-content {
+    flex: 1;
+    padding: 16px;
+  }
+  
+  .laporan-content h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .laporan-content p {
+    margin: 4px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+    margin-top: 6px;
+  }
+  
+  .status-koordinasi {
+    background-color: #a400ff;
+  }
+  
+  .status-menunggu {
+    background-color: #e61e3c;
+  }
+  
+  .status-selesai {
+    background-color: #28a745;
+  }
+  
+  .laporan-detail {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+.search-bar-wrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+  gap: 8px; /* sedikit jarak antar elemen */
+  flex-wrap: wrap;
+}
+
+.search-bar-wrapper input {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  min-width: 0;
+}
+
+.search-bar-wrapper button {
+  padding: 14px 20px;
+  border: none;
+  height: 45px;
+  background-color: #0062cc;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-bar-wrapper button:hover {
+  background-color: #004a99;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .search-bar-wrapper {
+    flex-direction: column;
+  }
+
+  .search-bar-wrapper button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

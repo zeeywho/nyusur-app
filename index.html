@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nyusur</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="Gambar/Logo1.png" alt="Logo" /></a>
+      <h2>Nyusur</h2>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Register</a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h3 class="welcome-text">Halo, Selamat Datang Di <span class="highlight">Nyusur</span></h3>
+
+    <section class="cards-container">
+      <div class="card main-card">
+        <p>Apakah Ada Kerusakan Jalan?<br>Buat Laporannya Yuk!</p>
+        <a href="input.html"><button class="btn" onclick="buatLaporan()">Buat Laporan Foto</button></a>
+      </div>
+
+      <div class="side-cards">
+            <a href="laporan.html" class="card side-card1">
+              <p>📜 Lihat Laporan Lainnya</p>
+            </a>
+            <a href="laporankita.html" class="card side-card1">
+              <p>📃 Pantau Laporan Kamu</p>
+            </a>
+          </div>          
+      </div>
+    </section>
+  </main>
+
+  <script src="home.js"></script>
+</body>
+</html>

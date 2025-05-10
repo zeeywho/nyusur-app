@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buat Laporan Warga</title>
+  <link rel="shortcut icon" href="Gambar/Logo1.png">
+  <link rel="stylesheet" href="input.css" />
+</head>
+<header>
+    <div class="logo">
+      <a href="index.html"><img src="Gambar/Logo1.png" alt="Logo" /></a>
+      <h2>Nyusur</h2>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Register</a>
+    </div>
+  </header>
+<body>
+  <div class="container">
+    <h1>Buat Laporan Warga</h1>
+
+    <form id="formLaporan"> 
+      <label>Judul:</label>
+      <input type="text" id="judul" required />
+
+      <label>Lokasi:</label>
+      <input type="text" id="lokasi" required />
+
+      <label>Deskripsi:</label>
+      <textarea id="deskripsi" rows="5" required></textarea>
+
+      <label>Upload Gambar:</label>
+      <input type="file" id="gambar" accept="image/*" required />
+
+      <button type="submit">Kirim Laporan</button>
+    </form>
+
+    <div id="statusUpload"></div>
+    <div id="notifikasi"></div>
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="input.js"></script>
+
+</body>
+</html>

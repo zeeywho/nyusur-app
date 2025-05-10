@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laporan Warga</title>
+  <link rel="shortcut icon" href="Gambar/Logo1.png">
+  <link rel="stylesheet" href="laporan.css">
+</head>
+<header>
+    <div class="logo">
+      <a href="index.html"><img src="Gambar/Logo1.png" alt="Logo" /></a>
+      <h2>Nyusur</h2>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Register</a>
+    </div>
+  </header>
+<body>
+  <button id="btnBack" class="btn-back hidden">← Kembali</button>
+  <div class="container">
+    <h1>Laporan Warga</h1>
+    <div class="search-bar-wrapper">
+        <input type="text" id="searchBox" placeholder="Cari laporan warga...">
+        <button id="btnSearch">Search</button>
+      </div>
+    <div id="laporanList" class="laporan-list"></div>
+    <div id="laporanDetail" class="laporan-detail hidden"></div>
+  </div>
+  
+  <script src="laporan.js"></script>
+</body>
+</html>

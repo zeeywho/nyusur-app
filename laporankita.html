@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar Laporan Warga</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .laporan-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .laporan-card {
+      background: #f2f2f5;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .laporan-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+    .laporan-card h3 {
+      margin: 0.5rem 0 0.3rem;
+    }
+    .laporan-card p {
+      margin: 0.2rem 0;
+      color: #333;
+    }
+    .timestamp {
+      font-size: 0.8rem;
+      color: gray;
+      margin-top: 0.5rem;
+    }
+
+      header {
+  background-color: rgb(255, 255, 255);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 55px;
+  margin-right: 10px;
+}
+
+.logo img:hover{
+  transform: translateY(-2px);
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+  .auth-buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .auth-buttons a {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .auth-buttons .login-btn {
+    border: 2px solid #1976d2;
+    color: #1976d2;
+    background: transparent;
+  }
+  
+  .auth-buttons .register-btn {
+    background: #1976d2;
+    color: white;
+  }
+  </style>
+</head>
+<header>
+    <div class="logo">
+      <a href="index.html"><img src="Gambar/Logo1.png" alt="Logo" /></a>
+      <h2>Nyusur</h2>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Register</a>
+    </div>
+  </header>
+<body>
+  <h2>📋 Daftar Laporan Warga</h2>
+  <div class="laporan-container" id="laporanContainer"></div>
+
+  <script type="module">
+    import { db } from './firebase-config.js';
+    import { collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+    const laporanContainer = document.getElementById("laporanContainer");
+
+    async function loadLaporan() {
+      const q = query(collection(db, "laporan"), orderBy("timestamp", "desc"));
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+
+        const card = document.createElement("div");
+        card.className = "laporan-card";
+
+        card.innerHTML = `
+          <img src="${data.gambarUrl}" alt="Foto Laporan" />
+          <h3>${data.judul}</h3>
+          <p><strong>Lokasi:</strong> ${data.lokasi}</p>
+          <p>${data.deskripsi}</p>
+          <p class="timestamp">${data.timestamp?.toDate().toLocaleString() || "Waktu tidak tersedia"}</p>
+        `;
+
+        laporanContainer.appendChild(card);
+      });
+    }
+
+    loadLaporan();
+  </script>
+</body>
+</html>

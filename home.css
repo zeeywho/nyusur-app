@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #99b1ca;
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 55px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: translateY(-2px);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 70vh;
+}
+
+.welcome-text {
+  background-color: white;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.cards-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.main-card {
+  height: 300px;
+  flex: 2;
+  min-width: 300px;
+}
+
+.side-card1 {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.side-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 300px;
+  gap: 20px;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.side-card1:hover,
+.side-card2:hover {
+  transform: translateY(-2px);
+}
+
+.card {
+  background-color: #f2f2f5;
+  background-size: cover;
+  background-position: center;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease, background-size 0.3s ease;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.card:hover {
+  background-size: 110%;
+  box-shadow: none;
+  transform: scale(1.02);
+  border: 2px solid #f3f3f3;
+}
+
+.btn {
+  margin-top: 100px;
+  padding: 12px 20px;
+  background-color: #5a62ea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3f51b5;
+  transform: translateY(-2px);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.auth-buttons a {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-buttons .login-btn {
+  border: 2px solid #1976d2;
+  color: #1976d2;
+  background: transparent;
+}
+
+.auth-buttons .register-btn {
+  background: #1976d2;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .cards-container {
+    padding: 0 10px;
+    flex-direction: column;
+  }
+
+  .main-card,
+  .side-cards {
+    min-width: 100%;
+    height: auto;
+  }
+
+  .btn {
+    margin-top: 40px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 40px;
+  }
+
+  .welcome-text {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .card {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+
+  .auth-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
